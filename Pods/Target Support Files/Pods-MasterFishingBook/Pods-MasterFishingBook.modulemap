@@ -1,0 +1,6 @@
+framework module Pods_MasterFishingBook {
+  umbrella header "Pods-MasterFishingBook-umbrella.h"
+
+  export *
+  module * { export * }
+}
