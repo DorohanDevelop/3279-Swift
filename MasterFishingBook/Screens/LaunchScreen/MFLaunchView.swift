@@ -45,6 +45,17 @@ struct MFLaunchView: View {
                         .ignoresSafeArea()
                 }
             )
+            .onAppear {
+                progress = 0
+                Timer.scheduledTimer(withTimeInterval: 0.03, repeats: true) { timer in
+                    if progress < 1 {
+                        progress += 0.01
+                    } else {
+                        timer.invalidate()
+                        isActive = true
+                    }
+                }
+            }
         }
         .navigationViewStyle(StackNavigationViewStyle())
         .hideNavigationBar()
